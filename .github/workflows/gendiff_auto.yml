@@ -12,8 +12,9 @@ jobs:
       with:
         python-version: 3.x
     - name: Install dependencies
-    - run: |
+      run: |
         pip install poetry
         make install
     - name: Run linter and pytest
-    - run: make check
+      run: |
+        make check
