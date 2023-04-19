@@ -11,7 +11,7 @@
 
 plain_json:
 
-[![asciicast](https://asciinema.org/a/cZnFkHBYHksr0v9N2krCaHs2b.svg)](https://asciinema.org/a/cZnFkHBYHksr0v9N2krCaHs2b)
+[![asciicast](https://asciinema.org/a/YeRK6DpNHr4yzvSYVUp1HGEu5.svg)](https://asciinema.org/a/YeRK6DpNHr4yzvSYVUp1HGEu5)
 
 plain_yml:
 
