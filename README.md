@@ -9,4 +9,9 @@
 
 <a href="https://codeclimate.com/github/HoldCarter/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/caab6a64f7eb270a88cf/test_coverage" /></a>
 
-gendiff plain: https://asciinema.org/a/cZnFkHBYHksr0v9N2krCaHs2b
+plain_json:
+[![asciicast](https://asciinema.org/a/cZnFkHBYHksr0v9N2krCaHs2b)
+
+plain_yml:
+[![asciicast](https://asciinema.org/a/ZL3zytZgsEIe0mmyczi7m80lc)
+
