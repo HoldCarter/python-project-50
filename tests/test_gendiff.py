@@ -1,6 +1,9 @@
 import pytest
-from gendiff import generate_diff
+from gendiff import generate_diff, take_args
 
 
 def test_generate_diff():
-    assert generate_diff() == "- follow: False\n host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: True"
+    plain_test_path = 'fixtures/plain_files_test.txt'
+    with open(plain_test_path, encoding='utf8') as f:
+        plain_test = f.read().strip()
+        assert generate_diff("fixtures/file1.json", "fixtures/file2.json") == plain_test
