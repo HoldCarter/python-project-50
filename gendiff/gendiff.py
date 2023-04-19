@@ -1,30 +1,14 @@
-import argparse
 import json
+import yaml
 
 
-def take_args():
-    parser = argparse.ArgumentParser(description="Compares two configuration \
-                                      files and shows a difference.")
-    parser.add_argument('first_file', type=str, help='First file to compare')
-    parser.add_argument('second_file', type=str, help='Second file to compare')
-    parser.add_argument('-f', '--format', help='set format of output')
-    args = parser.parse_args()
-    first_file_path = args.first_file
-    second_file_path = args.second_file
-    return first_file_path, second_file_path
-
-
-def generate_diff(pos1, pos2):
-    with open(pos1) as f1, open(pos2) as f2:
-        file1 = json.load(f1)
-        file2 = json.load(f2)
-
-    res_dict = {**file1, **file2}
+def generate_diff(dict1, dict2):
+    res_dict = {**dict1, **dict2}
     result = ['{', '\n']
 
     for key in sorted(res_dict.keys()):
-        val1 = file1.get(key)
-        val2 = file2.get(key)
+        val1 = dict1.get(key)
+        val2 = dict2.get(key)
 
         if val1 == val2:
             if val1 is not None:
@@ -37,3 +21,17 @@ def generate_diff(pos1, pos2):
 
     result.append('}')
     return ''.join(result)
+
+
+def plain_json_diff(pos1, pos2):
+    with open(pos1) as f1, open(pos2) as f2:
+        file1 = json.load(f1)
+        file2 = json.load(f2)
+    return generate_diff(file1, file2)
+
+
+def plain_yml_diff(pos1, pos2):
+    with open(pos1) as f1, open(pos2) as f2:
+        file1 = yaml.load(f1, Loader=yaml.FullLoader)
+        file2 = yaml.load(f2, Loader=yaml.FullLoader)
+    return generate_diff(file1, file2)
