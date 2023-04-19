@@ -23,15 +23,17 @@ def generate_diff(pos1, pos2):
     result = ['{', '\n']
 
     for key in sorted(res_dict.keys()):
-        val1, val2 = file1.get(key), file2.get(key)
-        if val1 != val2:
+        val1 = file1.get(key)
+        val2 = file2.get(key)
+
+        if val1 == val2:
+            if val1 is not None:
+                result.append(f"    {key}: {str(val1).lower()}\n")
+        else:
             result.append(f"  - {key}: {str(val1).lower()}\n"
                           if val1 is not None else '')
             result.append(f"  + {key}: {str(val2).lower()}\n"
                           if val2 is not None else '')
-        else:
-            result.append(f"    {key}: {str(val1).lower()}\n"
-                          if val1 is not None else '')
 
     result.append('}')
     return ''.join(result)
