@@ -15,19 +15,23 @@ def take_args():
 
 
 def generate_diff(pos1, pos2):
-    file1 = json.load(open(f'{pos1}'))
-    file2 = json.load(open(f'{pos2}'))
-    result = ''  # требование, чтобы результатом была строка
-    res_dict = {**file1, **file2}
-    for key in sorted(res_dict.keys()):
-        if file1.get(key) != file2.get(key):
-            if file1.get(key) is not None:
-                result += f"  - {key}: {str(file1.get(key)).lower()}\n"
-            if file2.get(key) is not None:
-                result += f"  + {key}: {str(file2.get(key)).lower()}\n"
-        else:
-            result += f"    {key}: {str(file1.get(key)).lower()}\n"
-    result = "{" + "\n" + result[:-1] + "\n" + "}"
-    return result
+    with open(pos1) as f1, open(pos2) as f2:
+        file1 = json.load(f1)
+        file2 = json.load(f2)
 
-# gendiff ./data/file1.json ./data/file2.json
+    res_dict = {**file1, **file2}
+    result = ['{', '\n']
+
+    for key in sorted(res_dict.keys()):
+        val1, val2 = file1.get(key), file2.get(key)
+        if val1 != val2:
+            result.append(f"  - {key}: {str(val1).lower()}\n"
+                          if val1 is not None else '')
+            result.append(f"  + {key}: {str(val2).lower()}\n"
+                          if val2 is not None else '')
+        else:
+            result.append(f"    {key}: {str(val1).lower()}\n"
+                          if val1 is not None else '')
+
+    result.append('}')
+    return ''.join(result)
