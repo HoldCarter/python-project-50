@@ -17,3 +17,7 @@ plain_yml:
 
 [![asciicast](https://asciinema.org/a/ZL3zytZgsEIe0mmyczi7m80lc.svg)](https://asciinema.org/a/ZL3zytZgsEIe0mmyczi7m80lc)
 
+nested_:
+
+[![asciicast](https://asciinema.org/a/kmGVSJgz5G2roZIyQggdx4HwN.svg)](https://asciinema.org/a/kmGVSJgz5G2roZIyQggdx4HwN)
+
