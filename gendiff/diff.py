@@ -1,23 +1,24 @@
-def make_diff(dict1, dict2, result={}):
-    '''Функция принимает два словаря и возвращает один словарь, где в качестве ключей- кортеж, в который добавлены значения "add", "deleted" и "no_changed" в зависимости от различий переданных словарей
-    '''
-    res_dict = {**dict1, **dict2}
-    for key in sorted(res_dict.keys()):
-        val1 = dict1.get(key, 'incorrect')
-        val2 = dict2.get(key, 'incorrect')
-
-        if (isinstance(val1, dict) and isinstance(val2, dict)):
-            children = {}
-            result[(key, 'no_changed')] = make_diff(val1, val2, children)
-
+def make_diff(contents1, contents2):
+    keys_common = sorted(set(contents1.keys()) | set(contents2.keys()))
+    diff = []
+    for key in keys_common:
+        value1 = contents1.get(key, "!none")
+        value2 = contents2.get(key, "!none")
+        if isinstance(value1, dict) and isinstance(value2, dict):
+            diff.append(item(key, make_diff(value1, value2), "nested"))
+        elif value1 == value2:
+            diff.append(item(key, value1, "unchanged"))
+        elif value2 == "!none":
+            diff.append(item(key, value1, "deleted"))
+        elif value1 == "!none":
+            diff.append(item(key, value2, "added"))
         else:
-            if val1 == val2:
-                result[(key, 'no_changed')] = val1
+            diff.append(item(key, (value1, value2), "updated"))
+    return diff
 
-            else: #val1 != val2:
-                if val1 != 'incorrect':
-                    result[(key, 'deleted')] = val1
-                if val2 != 'incorrect':
-                    result[(key, 'added')] = val2
 
-    return result
+def item(key, value, action):
+    return {
+        "key": key,
+        "value": value,
+        "action": action}

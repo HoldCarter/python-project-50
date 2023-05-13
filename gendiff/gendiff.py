@@ -1,14 +1,12 @@
-import json
-import yaml
-from gendiff.formatters import stylish
+from gendiff.formatters import plain_format, json_format, stylish_format
 from gendiff.diff import make_diff
 from gendiff.parser import converter
 
 
 FORMATTERS = {
-    "stylish": stylish
-    # "plain": plain_format,
-    # "json": json_format
+    "stylish": stylish_format,
+    "plain": plain_format,
+    "json": json_format
 }
 
 
