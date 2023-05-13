@@ -1,4 +1,5 @@
-from gendiff.gendiff import stylish, make_diff, converter, generate_diff
+from gendiff.gendiff import converter, generate_diff
+from gendiff.diff import make_diff
 from gendiff.parser import take_args
 
-__all__ = ["generate_diff", "take_args", "stylish", "make_diff", "converter"]
+__all__ = ["generate_diff", "take_args", "make_diff", "converter"]
