@@ -10,6 +10,13 @@ test-coverage:
 lint:
 	poetry run flake8 gendiff
 
+
+publish:
+	poetry publish --dry-run
+
+package-install:
+	python3 -m pip install --user --force dist/*.whl
+
 selfcheck:
 	poetry check
 
