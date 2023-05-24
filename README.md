@@ -1,25 +1,34 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/HoldCarter/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/HoldCarter/python-project-50/actions)  [![gendiff](https://github.com/HoldCarter/python-project-50/actions/workflows/gendiff_auto.yml/badge.svg)](https://github.com/HoldCarter/python-project-50/actions/workflows/gendiff_auto.yml)  <a href="https://codeclimate.com/github/HoldCarter/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/caab6a64f7eb270a88cf/maintainability" /></a>  <a href="https://codeclimate.com/github/HoldCarter/python-project-50/test_coverage"><img src="https://api.codeclimate.com/v1/badges/caab6a64f7eb270a88cf/test_coverage" /></a>
 
-plain_json_stylish_formatter:
+## Description
 
-[![asciicast](https://asciinema.org/a/YeRK6DpNHr4yzvSYVUp1HGEu5.svg)](https://asciinema.org/a/YeRK6DpNHr4yzvSYVUp1HGEu5)
+The CLI-utility, which calculates the differences between two files. Supports three display styles (formatters - stylish, plain and json). 
 
-plain_yml_stylish_formatter:
+## Installation
 
-[![asciicast](https://asciinema.org/a/ZL3zytZgsEIe0mmyczi7m80lc.svg)](https://asciinema.org/a/ZL3zytZgsEIe0mmyczi7m80lc)
+```
+git clone https://github.com/timosii/get_diff.git
+make install 
+make build
+make publish
+```
 
-nested_stylish_formatter:
+## Usage
 
-[![asciicast](https://asciinema.org/a/kmGVSJgz5G2roZIyQggdx4HwN.svg)](https://asciinema.org/a/kmGVSJgz5G2roZIyQggdx4HwN)
+For help use `gendiff -h`
 
-plain_formatter:
+Below are examples of how the program works for three formatters.
 
-[![asciicast](https://asciinema.org/a/msUXXq066uJvrIhJr1mjVB1Uo.svg)](https://asciinema.org/a/msUXXq066uJvrIhJr1mjVB1Uo)
+### stylish_formatter (set as default):
 
-json_formatter:
+[![asciicast](https://asciinema.org/a/gxDKRBDiS7oqrTmZqxh8uBETi.svg)](https://asciinema.org/a/gxDKRBDiS7oqrTmZqxh8uBETi)
 
-[![asciicast](https://asciinema.org/a/9uWj2nfkclLp8vWa3vuNWhKET.svg)](https://asciinema.org/a/9uWj2nfkclLp8vWa3vuNWhKET)
+### plain_formatter:
 
-test
+[![asciicast](https://asciinema.org/a/HaxTUBzkZDpVDBoluH5uh5TLs.svg)](https://asciinema.org/a/HaxTUBzkZDpVDBoluH5uh5TLs)
+
+### json_formatter:
+
+[![asciicast](https://asciinema.org/a/Ty66aBvG81mMpTxgHM58tYFJC.svg)](https://asciinema.org/a/Ty66aBvG81mMpTxgHM58tYFJC)
 
