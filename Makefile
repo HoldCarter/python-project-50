@@ -10,7 +10,6 @@ test-coverage:
 lint:
 	poetry run flake8 gendiff
 
-
 publish:
 	poetry publish --dry-run
 
