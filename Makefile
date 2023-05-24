@@ -14,7 +14,7 @@ publish:
 	poetry publish --dry-run
 
 package-install:
-	python3 -m pip install --user --force dist/*.whl
+	pip install --user --force-reinstall dist/*.whl
 
 selfcheck:
 	poetry check
