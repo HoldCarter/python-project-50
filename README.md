@@ -8,10 +8,9 @@ The CLI-utility, which calculates the differences between two files. Supports th
 ## Installation
 
 ```
-git clone https://github.com/timosii/get_diff.git
-make install 
+git clone git@github.com:timosii/get_diff.git
 make build
-make publish
+make package-install
 ```
 
 ## Usage
