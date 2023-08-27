@@ -10,6 +10,7 @@ The CLI-utility, which calculates the differences between two files. Supports th
 ```
 git clone git@github.com:timosii/get_diff.git
 cd get_diff
+make install
 make build
 make package-install
 ```
